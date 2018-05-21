@@ -143,6 +143,7 @@ platform_check_image() {
 	w306r-v20|\
 	w502u|\
 	wf-2881|\
+	wfg-travel|\
 	whr-1166d|\
 	whr-300hp2|\
 	whr-600d|\
