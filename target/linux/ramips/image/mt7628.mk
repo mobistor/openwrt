@@ -19,6 +19,14 @@ define Device/miwifi-nano
 endef
 TARGET_DEVICES += miwifi-nano
 
+define Device/wfg-travel
+  DTS := WFG-TRAVEL
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
+  DEVICE_TITLE := WiFiFreeGo Travel
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport
+endef
+TARGET_DEVICES += wfg-travel
+
 define Device/vocore2
   DTS := VOCORE2
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
