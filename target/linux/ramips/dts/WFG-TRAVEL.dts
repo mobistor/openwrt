@@ -23,15 +23,15 @@
 
 		led0 {
 			label = "wfg-travel:blue:led0";
-			gpios = <&gpio0 5 1>;
+			gpios = <&gpio0 1 1>;
 		};
 		led1 {
 			label = "wfg-travel:blue:led1";
-			gpios = <&gpio0 4 1>;
+			gpios = <&gpio0 2 1>;
 		};
 		led2 {
 			label = "wfg-travel:blue:led2";
-			gpios = <&gpio0 1 1>;
+			gpios = <&gpio0 3 1>;
 		};
 	};
 
@@ -52,7 +52,7 @@
 &pinctrl {
 	state_default: pinctrl0 {
 		gpio {
-			ralink,group = "i2c", "refclk";
+			ralink,group = "i2s", "refclk";
 			ralink,function = "gpio";
 		};
 	};

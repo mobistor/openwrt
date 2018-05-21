@@ -390,6 +390,11 @@ youku-yk1)
 	set_usb_led "$board:blue:usb"
 	ucidef_set_led_switch "wan" "wan" "$board:blue:wan" "switch0" "0x10"
 	;;
+wfg-travel)
+	set_wifi_led "$board:blue:led1"
+  ucidef_set_led_switch "wan" "wan" "$board:blue:led0" "switch0" "0x10"
+  ;;
+	;;
 esac
 
 board_config_flush
