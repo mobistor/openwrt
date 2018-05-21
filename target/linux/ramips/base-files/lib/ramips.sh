@@ -508,6 +508,9 @@ ramips_board_detect() {
 	*"WF-2881")
 		name="wf-2881"
 		;;
+	*"WFG-TRAVEL")
+		name="wfg-travel"
+		;;
 	*"WHR-1166D")
 		name="whr-1166d"
 		;;
