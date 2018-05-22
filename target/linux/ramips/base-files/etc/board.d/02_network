@@ -100,19 +100,30 @@ ramips_setup_interfaces()
 	wl-wn575a3|\
 	wndr3700v5|\
 	wt1520|\
-	youku-yk1|\
 	zbt-ape522ii|\
 	zbt-we826|\
 	zbt-wg2626|\
-	zbt-wg3526|\
-	zbt-wr8305rt)
+	zbt-wg3526)
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
 		;;
 	wfg-travel)
+		ucidef_set_interfaces_lan_wan_mobispot "eth0.1" "eth0.2"
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:wan" "6@eth0"
     ;;
+	wt3020-8M)
+ 		ucidef_set_interfaces_lan_wan_mobispot "eth0.1" "eth0.2"
+		ucidef_add_switch "switch0" \
+			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
+		;;
+	youku-yk1 |\
+	zbt-wr8305rt |\
+	ms-mtk7621a-a1)
+		ucidef_set_interfaces_lan_wan_mobispot "eth0.1" "eth0.2"
+		ucidef_add_switch "switch0" \
+			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
+		;;
 	whr-300hp2|\
 	whr-600d|\
 	wsr-1166|\
