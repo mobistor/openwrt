@@ -299,7 +299,15 @@ ramips_setup_interfaces()
 		;;
 	esac
 }
+macaddr_del() {
+	local mac=$1
+	local val=$2
+	local oui=${mac%:*:*:*}
+	local nic=${mac#*:*:*:}
 
+	nic=$(printf "%06x" $((0x${nic//:/} - $val & 0xffffff)) | sed 's/^\(.\{2\}\)\(.\{2\}\)\(.\{2\}\)/\1:\2:\3/')
+	echo $oui:$nic
+}
 ramips_setup_macs()
 {
 	local board="$1"
@@ -445,6 +453,21 @@ ramips_setup_macs()
 		local index="$(find_mtd_index "board_data")"
 		wan_mac="$(grep -m1 mac= "/dev/mtd${index}" | cut -d= -f2)"
 		lan_mac=$wan_mac
+		;;
+	zbt-wr8305rt|\
+	wfg-travel|\
+	wt3020-8M)
+		wan_mac=$(cat /sys/class/net/eth0/address)
+		lan_mac=$(macaddr_add "$wan_mac" 1)
+		n2n_mac=$wan_mac
+		vpn_mac=$wan_mac
+		;;
+	ms-mtk7621a-a1|\
+	youku-yk1)
+		lan_mac=$(cat /sys/class/net/eth0/address)
+		wan_mac=$(macaddr_del "$lan_mac" 1)
+		n2n_mac=$wan_mac
+		vpn_mac=$wan_mac
 		;;
 	*)
 		lan_mac=$(cat /sys/class/net/eth0/address)

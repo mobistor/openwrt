@@ -391,8 +391,8 @@ youku-yk1)
 	ucidef_set_led_switch "wan" "wan" "$board:blue:wan" "switch0" "0x10"
 	;;
 wfg-travel)
-	ucidef_set_led_switch "wan" "wan" "$board:blue:led0" "switch0" "0x10"
-	set_wifi_led "$board:blue:led1"
+	ucidef_set_led_switch "wan" "wan" "$board:blue:wan" "switch0" "0x10"
+	set_wifi_led "$board:blue:air"
   ;;
 	;;
 esac

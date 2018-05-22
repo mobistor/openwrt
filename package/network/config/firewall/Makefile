@@ -37,7 +37,7 @@ endef
 
 define Package/firewall/conffiles
 /etc/config/firewall
-/etc/firewall.user
+#/etc/firewall.user
 endef
 
 TARGET_CFLAGS += -ffunction-sections -fdata-sections
@@ -53,8 +53,8 @@ define Package/firewall/install
 	$(INSTALL_DATA) ./files/firewall.hotplug $(1)/etc/hotplug.d/iface/20-firewall
 	$(INSTALL_DIR) $(1)/etc/config/
 	$(INSTALL_DATA) ./files/firewall.config $(1)/etc/config/firewall
-	$(INSTALL_DIR) $(1)/etc/
-	$(INSTALL_DATA) ./files/firewall.user $(1)/etc/firewall.user
+#	$(INSTALL_DIR) $(1)/etc/
+#	$(INSTALL_DATA) ./files/firewall.user $(1)/etc/firewall.user
 endef
 
 $(eval $(call BuildPackage,firewall))
