@@ -21,16 +21,16 @@
 	gpio-leds {
 		compatible = "gpio-leds";
 
-		wan {
-			label = "wfg-travel:blue:wan";
+		go {
+			label = "wfg-travel:blue:go";
 			gpios = <&gpio0 1 1>;
 		};
 		air {
 			label = "wfg-travel:blue:air";
 			gpios = <&gpio0 2 1>;
 		};
-		vpn {
-			label = "wfg-travel:blue:vpn";
+		wan {
+			label = "wfg-travel:blue:wan";
 			gpios = <&gpio0 3 1>;
 		};
 	};
