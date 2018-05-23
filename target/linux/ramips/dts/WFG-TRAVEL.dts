@@ -49,7 +49,8 @@
 
 		reset {
 			label = "reset";
-			gpios = <&gpio0 11 1>;
+/*			gpios = <&gpio0 11 1>; */
+			gpios = <&gpio1 8 1>;
 			linux,code = <KEY_RESTART>;
 		};
 	};
@@ -58,7 +59,7 @@
 &pinctrl {
 	state_default: pinctrl0 {
 		gpio {
-			ralink,group = "i2s", "refclk", "wled_an", "p0led_an", "p1led_an", "p2led_an";
+			ralink,group = "i2s", "refclk", "wled_an", "p0led_an", "p1led_an", "p2led_an", ""p3led_an";
 			ralink,function = "gpio";
 		};
 /*		wled_an {
