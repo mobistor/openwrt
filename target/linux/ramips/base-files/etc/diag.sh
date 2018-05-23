@@ -118,6 +118,7 @@ get_status_led() {
 	rt-n14u|\
 	rt-n15|\
 	rt-n56u|\
+	wfg-travel|\
 	wl-330n|\
 	wl-330n3g|\
 	wli-tx4-ag300n|\

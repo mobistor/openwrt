@@ -20,19 +20,25 @@
 
 	gpio-leds {
 		compatible = "gpio-leds";
+		/* gpio0 0-31 
+			gpio1 32-63 */
 
 		go {
 			label = "wfg-travel:blue:go";
-			gpios = <&gpio0 1 1>;
+			gpios = <&gpio1 12 1>;
 		};
 		air {
 			label = "wfg-travel:blue:air";
-			gpios = <&gpio0 2 1>;
+			gpios = <&gpio1 11 1>;
 		};
 		wan {
 			label = "wfg-travel:blue:wan";
-			gpios = <&gpio0 3 1>;
+			gpios = <&gpio1 10 1>;
 		};
+		power {
+      label = "wfg-travel:blue:power";
+      gpios = <&gpio1 9 1>;
+    };
 	};
 
 	gpio-keys {
@@ -52,9 +58,13 @@
 &pinctrl {
 	state_default: pinctrl0 {
 		gpio {
-			ralink,group = "i2s", "refclk";
+			ralink,group = "i2s", "refclk", "wled_an", "p0led_an", "p1led_an", "p2led_an";
 			ralink,function = "gpio";
 		};
+/*		wled_an {
+      ralink,group = "wled_an";
+      ralink,function = "wled_an";
+    }; */
 	};
 };
 
