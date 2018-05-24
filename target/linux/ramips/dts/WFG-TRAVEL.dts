@@ -49,8 +49,11 @@
 
 		reset {
 			label = "reset";
-/*			gpios = <&gpio0 11 1>; */
-			gpios = <&gpio1 8 1>;
+			/* sdk board */
+			gpios = <&gpio0 11 1>; 
+			
+			/* wfg-travel, gpio=40 */
+			/* gpios = <&gpio1 8 1>; */
 			linux,code = <KEY_RESTART>;
 		};
 	};
